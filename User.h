@@ -3,6 +3,7 @@
 
 #include <string>
 #include <cstdlib>
+#include <iostream>
 #pragma once
 
 
@@ -17,6 +18,7 @@ private:
     float accAmount = 0; //float instead of double, only need 2 decimals
     string password;
     string userName;
+    string generateUsername();
 public:
     User(string first, string last); //constructor
     string getName();
@@ -25,6 +27,7 @@ public:
     void addFunds(float money);
     void subFunds(float money);
     float checkFunds();
+    void setPswrd(string newPswrd);
 };
 
 

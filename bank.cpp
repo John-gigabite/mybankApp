@@ -6,6 +6,7 @@
 using namespace std;
 string choice;
 string name1, name2;
+string pswrd;
 float amount;
 vector<User> userList; //Create option for 
 bool homeFlag = true;
@@ -47,10 +48,12 @@ int main()
         printWelcMenu();
         cin >> choice;
 
+        //Logging in to account
         if (choice == "1")
         { // refactor for better input handling
             cout << "logging in ..." << endl;
         }
+        //Creating account
         else if (choice == "2")
         {
             cout << "First name: ";
@@ -60,6 +63,10 @@ int main()
 
             User user1 = User(name1, name2);
             int num1 = generateAcc();
+
+            cout << "Create a password: ";
+            cin >> pswrd;
+            user1.setPswrd(pswrd);
             user1.setAccNum(num1);
             userList.push_back(user1);
             while (homeFlag){
@@ -87,4 +94,3 @@ int main()
         }
     }
 }
-// alt+shift+f to format cpp code
